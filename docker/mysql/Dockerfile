@@ -1,1 +1,1 @@
-FROM mysql:latest
+FROM --platform=linux/x86_64 mysql:latest
