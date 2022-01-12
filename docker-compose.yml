@@ -19,6 +19,8 @@ services:
     ports:
       - 8000:8000
     tty: true
+    volumes:
+      - ./go-app:/app/go
   mysql:
     build:
       context: .
