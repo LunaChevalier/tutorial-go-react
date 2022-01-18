@@ -15,3 +15,46 @@
 ```
 docker exec -it go_container ash
 ```
+
+## tutorial
+
+### graphqlでデータを取得する
+
+apiのエンドポイント(http://localhost:8000/query)に以下のクエリを実行して、データを取得する
+
+```
+query findTodos {
+  todos {
+    text
+    done
+
+  }
+}
+```
+
+
+### graphqlでデータを更新する
+
+apiのエンドポイント(http://localhost:8000/query)に以下のクエリを実行して、データを保存する
+
+```
+mutation createTodo {
+	createTodo(input:{ text: "test", userId:"1" }){
+    id
+    text
+    done
+    user {
+      id
+      name
+    }
+  }
+}
+```
+
+### ディレクトリgraph以下のテストを実行する
+
+
+```
+go test -v ./graph
+```
+
